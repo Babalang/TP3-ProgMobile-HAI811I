@@ -14,7 +14,7 @@ public class planningsummary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.planningsummary_activity);
-        dataSet = new DataSet(this, "inscription.db", null, 1);
+        dataSet = new DataSet(this, "inscription.db", null);
 
         TextView summaryText = findViewById(R.id.summaryText);
         String summary = getPlanningSummary();

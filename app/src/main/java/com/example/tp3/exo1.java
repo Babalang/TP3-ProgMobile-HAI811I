@@ -24,7 +24,7 @@ public class exo1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        DataBase = new DataSet(getContext(), "inscription.db", null, 1);
+        DataBase = new DataSet(getContext(), "inscription.db", null);
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.exo1, container, false);
         Button button = view.findViewById(R.id.mainbutton);

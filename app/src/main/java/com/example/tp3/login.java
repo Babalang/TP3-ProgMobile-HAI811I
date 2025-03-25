@@ -18,7 +18,7 @@ public class login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        DataBase = new DataSet(this, "inscription.db", null, 1);
+        DataBase = new DataSet(this, "inscription.db", null);
 
         Button btnLogin = findViewById(R.id.btnLogin);
         EditText editLogin = findViewById(R.id.editLogin);

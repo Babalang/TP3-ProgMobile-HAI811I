@@ -10,7 +10,7 @@ public class DataSet extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "inscription.db";
 
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Table Name
     public static final String TABLE_USER_DATA = "user_data";
@@ -51,8 +51,8 @@ public class DataSet extends SQLiteOpenHelper {
             "CREATE TABLE " + TABLE_NEWTABLE + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT);";
 
-    public DataSet(Context context, String nom, SQLiteDatabase.CursorFactory cursorfactory, int version) {
-        super(context, nom, cursorfactory, version);
+    public DataSet(Context context, String nom, SQLiteDatabase.CursorFactory cursorfactory) {
+        super(context, nom, cursorfactory, DATABASE_VERSION);
     }
     @Override
     public void onCreate(SQLiteDatabase db) {

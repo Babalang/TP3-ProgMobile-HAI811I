@@ -17,7 +17,7 @@ public class planning extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.planning_activity);
-        dataSet = new DataSet(this, "inscription.db", null, 1);
+        dataSet = new DataSet(this, "inscription.db", null);
         slot1 = findViewById(R.id.slot1);
         slot2 = findViewById(R.id.slot2);
         slot3 = findViewById(R.id.slot3);
