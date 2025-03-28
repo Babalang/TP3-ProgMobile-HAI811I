@@ -1,7 +1,6 @@
 package com.example.tp3;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -10,7 +9,7 @@ public class DataSet extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "inscription.db";
 
     // Database Version
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     // Table Name
     public static final String TABLE_USER_DATA = "user_data";
@@ -68,40 +67,6 @@ public class DataSet extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertData(String login, String password, String name, String surname, String birthDate, String phoneNumber, String email, String interests) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "INSERT INTO " + TABLE_USER_DATA + " (" + COLUMN_LOGIN + ", " + COLUMN_PASSWORD + ", " + COLUMN_NAME + ", " + COLUMN_SURNAME + ", " + COLUMN_BIRTH_DATE + ", " + COLUMN_PHONE_NUMBER + ", " + COLUMN_EMAIL + ", " + COLUMN_INTERESTS + ") ";
-        query += "VALUES ('" + login + "', '" + password + "', '" + name + "', '" + surname + "', '" + birthDate + "', '" + phoneNumber + "', '" + email + "', '" + interests + "');";
-        db.execSQL(query);
-    }
-
-    public void deleteData(String login) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "DELETE FROM " + TABLE_USER_DATA + " WHERE " + COLUMN_LOGIN + " = '" + login + "';";
-        db.execSQL(query);
-    }
-
-    public void updateData(String login, String password, String name, String surname, String birthDate, String phoneNumber, String email, String interests) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "UPDATE " + TABLE_USER_DATA + " SET " + COLUMN_PASSWORD + " = '" + password + "', " + COLUMN_NAME + " = '" + name + "', " + COLUMN_SURNAME + " = '" + surname + "', " + COLUMN_BIRTH_DATE + " = '" + birthDate + "', " + COLUMN_PHONE_NUMBER + " = '" + phoneNumber + "', " + COLUMN_EMAIL + " = '" + email + "', " + COLUMN_INTERESTS + " = '" + interests + "' WHERE " + COLUMN_LOGIN + " = '" + login + "';";
-        db.execSQL(query);
-    }
-
-    public Cursor getData(String login) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_USER_DATA + " WHERE " + COLUMN_LOGIN + " = '" + login + "';";
-        return db.rawQuery(query, null);
-    }
-    public Cursor getAllData() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_USER_DATA;
-        return db.rawQuery(query, null);
-    }
-    public Cursor getLastUser(){
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_USER_DATA + " ORDER BY " + COLUMN_ID + " DESC LIMIT 1";
-        return db.rawQuery(query, null);
-    }
 }
 
 

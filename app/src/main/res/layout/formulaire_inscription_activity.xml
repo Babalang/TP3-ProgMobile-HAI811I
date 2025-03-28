@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Exercice 1"
+        android:text="@string/Exercice_1"
         android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
         android:textSize="30sp"
@@ -22,14 +22,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login : "
+            android:text="@string/login"
             android:layout_marginTop="10dp"
             android:textSize="20sp"/>
         <EditText
             android:id="@+id/edit_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Login"
+            android:hint="@string/login"
             android:layout_marginTop="10dp"
             android:inputType="text"
             android:textSize="20sp"/>
@@ -42,14 +42,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mot de passe : "
+            android:text="@string/password"
             android:layout_marginTop="10dp"
             android:textSize="20sp"/>
         <EditText
             android:id="@+id/edit_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="password"
+            android:hint="@string/password"
             android:layout_marginTop="10dp"
             android:inputType="textPassword"
             android:textSize="20sp"/>
@@ -62,7 +62,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nom : "
+            android:text="@string/nom"
             android:layout_marginTop="10dp"
             android:textSize="20sp"/>
         <EditText
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Nom"
+            android:hint="@string/nom"
             android:textSize="20sp"/>
     </LinearLayout>
     <LinearLayout
@@ -81,7 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prénom"
+            android:text="@string/prenom"
             android:layout_marginTop="10dp"
             android:textSize="20sp"/>
         <EditText
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Prenom"
+            android:hint="@string/prenom"
             android:textSize="20sp"/>
     </LinearLayout>
     <LinearLayout
@@ -100,7 +100,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date de naissance"
+            android:text="@string/naissance"
             android:layout_marginTop="10dp"
             android:textSize="20sp"/>
         <EditText
@@ -108,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Date de naissance"
+            android:hint="@string/naissance"
             android:inputType="date"
             android:textSize="20sp"/>
     </LinearLayout>
@@ -120,14 +120,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Numéro de téléphone"
+            android:text="@string/numtel"
             android:layout_marginTop="10dp"
             android:textSize="20sp"/>
         <EditText
             android:id="@+id/edit_NumTel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Numéro de téléphone"
+            android:hint="@string/numtel"
             android:layout_marginTop="10dp"
             android:inputType="phone"
             android:textSize="20sp"/>
@@ -140,14 +140,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="@string/email"
             android:layout_marginTop="10dp"
             android:textSize="20sp"/>
         <EditText
             android:id="@+id/edit_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/email"
             android:layout_marginTop="10dp"
             android:inputType="textEmailAddress"
             android:textSize="20sp"/>
@@ -162,21 +162,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="sport"
+            android:text="@string/sport"
             android:textSize="20sp"/>
         <CheckBox
             android:id="@+id/checkbox_musique"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="musique"
+            android:text="@string/musique"
             android:textSize="20sp"/>
         <CheckBox
             android:id="@+id/checkbox_lecture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="lecture"
+            android:text="@string/lecture"
             android:textSize="20sp"/>
     </LinearLayout>
     <Button
@@ -185,6 +185,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="Soumettre"
+        android:text="@string/valider"
         android:textSize="20sp" />
 </LinearLayout>

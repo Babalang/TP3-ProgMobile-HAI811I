@@ -1,5 +1,6 @@
 package com.example.tp3;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,13 +10,14 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 
-public class exo1_2 extends Fragment {
+public class resume_inscription extends Fragment {
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.exo1_2, container, false);
+        View view = inflater.inflate(R.layout.resume_inscription_activity, container, false);
         Bundle bundle = getArguments();
         if (bundle != null) {
             String name = bundle.getString("name");
@@ -39,24 +41,24 @@ public class exo1_2 extends Fragment {
             textView.setText(bundle.getString("mdp"));
             if (bundle.getBoolean("sport")) {
                 textView = view.findViewById(R.id.sport);
-                textView.setText("Sport : Oui");
+                textView.setText(getString(R.string.sport)+" : "+getString(R.string.oui));
             } else {
                 textView = view.findViewById(R.id.sport);
-                textView.setText("Sport : Non");
+                textView.setText(getString(R.string.sport)+" : "+getString(R.string.non));
             }
             if (bundle.getBoolean("musique")) {
                 textView = view.findViewById(R.id.musique);
-                textView.setText("Musique : Oui");
+                textView.setText(getString(R.string.musique)+" : "+getString(R.string.oui));
             } else {
                 textView = view.findViewById(R.id.musique);
-                textView.setText("Musique : Non");
+                textView.setText(getString(R.string.musique)+" : "+getString(R.string.non));
             }
             if (bundle.getBoolean("lecture")) {
                 textView = view.findViewById(R.id.lecture);
-                textView.setText("Lecture : Oui");
+                textView.setText(getString(R.string.lecture)+" : "+getString(R.string.oui));
             } else {
                 textView = view.findViewById(R.id.lecture);
-                textView.setText("Lecture : Non");
+                textView.setText(getString(R.string.lecture)+" : "+getString(R.string.non));
             }
         }
         return view;

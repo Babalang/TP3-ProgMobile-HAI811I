@@ -24,13 +24,13 @@
         <activity android:name=".inscription"
             android:exported="true">
         </activity>
-        <activity android:name=".login"
+        <activity android:name=".connexion"
             android:exported="true">
         </activity>
         <activity android:name=".planning"
             android:exported="true">
         </activity>
-        <activity android:name=".planningsummary"
+        <activity android:name=".resume_planning"
             android:exported="true">
         </activity>
     </application>

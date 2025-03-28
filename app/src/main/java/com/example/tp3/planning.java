@@ -26,7 +26,7 @@ public class planning extends AppCompatActivity {
         Button btnValidate = findViewById(R.id.btnValidate);
         btnValidate.setOnClickListener(v -> {
             if (savePlanning()) {
-                Intent intent = new Intent(planning.this, planningsummary.class);
+                Intent intent = new Intent(planning.this, resume_planning.class);
                 startActivity(intent);
             }
         });
@@ -38,7 +38,7 @@ public class planning extends AppCompatActivity {
         String slot4Str = slot4.getText().toString();
         // Validate if all fields are filled
         if (slot1Str.isEmpty() || slot2Str.isEmpty() || slot3Str.isEmpty() || slot4Str.isEmpty()) {
-            Toast.makeText(this, "Please fill in all slots", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.completer, Toast.LENGTH_SHORT).show();
             return false;
         }
         // Initialize db here
@@ -51,32 +51,32 @@ public class planning extends AppCompatActivity {
             values.put(DataSet.COLUMN_ACTIVITY, slot1Str);
             newRowId = db.insert(DataSet.TABLE_PLANNING, null, values);
             if (newRowId == -1) {
-                Toast.makeText(this, "Failed to save slot 08h-10h", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.Echec+" 08h-10h", Toast.LENGTH_SHORT).show();
                 return false;
             }
             values.put(DataSet.COLUMN_TIME_SLOT, "10h-12h");
             values.put(DataSet.COLUMN_ACTIVITY, slot2Str);
             newRowId = db.insert(DataSet.TABLE_PLANNING, null, values);
             if (newRowId == -1) {
-                Toast.makeText(this, "Failed to save slot 10h-12h", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.Echec+" 10h-12h", Toast.LENGTH_SHORT).show();
                 return false;
             }
             values.put(DataSet.COLUMN_TIME_SLOT, "14h-16h");
             values.put(DataSet.COLUMN_ACTIVITY, slot3Str);
             newRowId = db.insert(DataSet.TABLE_PLANNING, null, values);
             if (newRowId == -1) {
-                Toast.makeText(this, "Failed to save slot 14h-16h", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.Echec+" 14h-16h", Toast.LENGTH_SHORT).show();
                 return false;
             }
             values.put(DataSet.COLUMN_TIME_SLOT, "16h-18h");
             values.put(DataSet.COLUMN_ACTIVITY, slot4Str);
             newRowId = db.insert(DataSet.TABLE_PLANNING, null, values);
             if (newRowId == -1) {
-                Toast.makeText(this, "Failed to save slot 16h-18h", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.Echec+" 16h-18h", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
-        Toast.makeText(this, "Planning saved successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.succes, Toast.LENGTH_SHORT).show();
         return true;
     }
 }

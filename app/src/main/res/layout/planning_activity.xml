@@ -9,30 +9,30 @@
         android:id="@+id/slot1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="08h-10h" />
+        android:hint="@string/prem_creneau" />
 
     <EditText
         android:id="@+id/slot2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="10h-12h" />
+        android:hint="@string/sec_creneau" />
 
     <EditText
         android:id="@+id/slot3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="14h-16h" />
+        android:hint="@string/ter_creneau" />
 
     <EditText
         android:id="@+id/slot4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="16h-18h" />
+        android:hint="@string/quat_creneau" />
 
     <Button
         android:id="@+id/btnValidate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Validate" />
+        android:text="@string/valider" />
 
 </LinearLayout>

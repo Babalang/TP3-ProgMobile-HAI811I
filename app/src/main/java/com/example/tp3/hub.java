@@ -9,7 +9,7 @@ public class hub extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState)	{
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hub);
+        setContentView(R.layout.hub_activity);
         Button exo1_button = findViewById(R.id.btnNewRegistration);
         exo1_button.setOnClickListener(v -> {
             Intent intent = new Intent(hub.this, inscription.class);
@@ -17,7 +17,7 @@ public class hub extends AppCompatActivity {
         });
         Button exo2_button = findViewById(R.id.btnLogin);
         exo2_button.setOnClickListener(v -> {
-            Intent intent = new Intent(hub.this, login.class);
+            Intent intent = new Intent(hub.this, connexion.class);
             startActivity(intent);
         });
     }

@@ -18,7 +18,7 @@ public class inscription extends FragmentActivity {
         if(getSupportFragmentManager().getBackStackEntryCount() > 0) {
             getSupportFragmentManager().popBackStack();
         }
-        exo1 countryListFragment = new exo1();
+        formulaire_inscription countryListFragment = new formulaire_inscription();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.frame, countryListFragment);
         transaction.addToBackStack(null);

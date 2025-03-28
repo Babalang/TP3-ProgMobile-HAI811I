@@ -7,13 +7,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class planningsummary extends AppCompatActivity {
+public class resume_planning extends AppCompatActivity {
     private DataSet dataSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.planningsummary_activity);
+        setContentView(R.layout.resume_planning_activity);
         dataSet = new DataSet(this, "inscription.db", null);
 
         TextView summaryText = findViewById(R.id.summaryText);

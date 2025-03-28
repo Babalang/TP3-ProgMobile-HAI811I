@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TP3</string>
     <string name="Exercice_1">Exercice 1</string>
@@ -7,17 +8,11 @@
     <string name="prenom">Prénom</string>
     <string name="naissance">Date de naissance</string>
     <string name="numtel">Numéro de téléphone</string>
-    <string name="email" translatable="false">Email</string>
-    <string name="sport" translatable="false">Sport</string>
     <string name="musique">Musique</string>
     <string name="lecture">Lecture</string>
     <string name="valider">Valider</string>
     <string name="inscription">Inscription</string>
     <string name="connexion">Connexion</string>
-    <string name="prem_creneau" translatable="false">08h-10h</string>
-    <string name="sec_creneau" translatable="false">10h-12h</string>
-    <string name="ter_creneau" translatable="false">14h-16h</string>
-    <string name="quat_creneau" translatable="false">16h-18h</string>
     <string name="login_no">Identifiant incorrect</string>
     <string name="login_deja">Identifiant déjà utilisé</string>
     <string name="mdp_inco">Mot de passe incorrect</string>

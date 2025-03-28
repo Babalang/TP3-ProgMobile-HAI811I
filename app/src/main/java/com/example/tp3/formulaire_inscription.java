@@ -17,7 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 
-public class exo1 extends Fragment {
+public class formulaire_inscription extends Fragment {
     private View view;
     private DataSet DataBase;
 
@@ -25,7 +25,7 @@ public class exo1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         DataBase = new DataSet(getContext(), "inscription.db", null);
-        view = inflater.inflate(R.layout.exo1, container, false);
+        view = inflater.inflate(R.layout.formulaire_inscription_activity, container, false);
         Button button = view.findViewById(R.id.mainbutton);
         button.setOnClickListener(v -> loadResultFragment());
         return view;
@@ -43,22 +43,22 @@ public class exo1 extends Fragment {
         CheckBox musique = view.findViewById(R.id.checkbox_musique);
         CheckBox lecture = view.findViewById(R.id.checkbox_lecture);
         String interests = "";
-        if (sport.isChecked()) interests += "sport,";
-        if (musique.isChecked()) interests += "musique,";
-        if (lecture.isChecked()) interests += "lecture,";
+        if (sport.isChecked()) interests += R.string.sport+",";
+        if (musique.isChecked()) interests += R.string.musique+",";
+        if (lecture.isChecked()) interests += R.string.lecture+",";
         if (interests.endsWith(",")) {
             interests = interests.substring(0, interests.length() - 1); // Remove trailing comma
         }
         if (!isValidLogin(login.getText().toString())) {
-            Toast.makeText(getContext(), "Login invalide", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.login_no, Toast.LENGTH_SHORT).show();
             return;
         }
         if (isLoginExist(login.getText().toString())) {
-            Toast.makeText(getContext(), "Login déjà utilisé", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.login_deja, Toast.LENGTH_SHORT).show();
             return;
         }
         if (!isValidPassword(mdp.getText().toString())) {
-            Toast.makeText(getContext(), "Mot de passe invalide", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.mdp_inco, Toast.LENGTH_SHORT).show();
             return;
         }
         ContentValues values = new ContentValues();
@@ -74,9 +74,9 @@ public class exo1 extends Fragment {
         long newRowId = db.insert(DataSet.TABLE_USER_DATA, null, values);
         db.close();
         if (newRowId != -1) {
-            Toast.makeText(getContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.data_save, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getContext(), "Failed to save data", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.data_no_save, Toast.LENGTH_SHORT).show();
         }
         Bundle bundle = new Bundle();
         bundle.putString("name", name.getText().toString());
@@ -90,12 +90,12 @@ public class exo1 extends Fragment {
         bundle.putBoolean("musique",musique.isChecked());
         bundle.putBoolean("lecture",lecture.isChecked());
         // Create Exo1_2Fragment and set arguments
-        exo1_2 exo1_2Fragment = new exo1_2();
-        exo1_2Fragment.setArguments(bundle);
+        resume_inscription resumeinscriptionFragment = new resume_inscription();
+        resumeinscriptionFragment.setArguments(bundle);
         // Replace the current fragment with Exo1_2Fragment
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.frame, exo1_2Fragment);
+        transaction.replace(R.id.frame, resumeinscriptionFragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }

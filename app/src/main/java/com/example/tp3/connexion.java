@@ -11,13 +11,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class login extends AppCompatActivity {
+public class connexion extends AppCompatActivity {
     private DataSet DataBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_activity);
+        setContentView(R.layout.connexion_activity);
 
         DataBase = new DataSet(this, "inscription.db", null);
 
@@ -30,26 +30,25 @@ public class login extends AppCompatActivity {
             String password = editPassword.getText().toString();
 
             if (checkUser(login, password)) {
-                Intent intent = new Intent(login.this, planning.class);
+                Intent intent = new Intent(connexion.this, planning.class);
                 startActivity(intent);
-                finish(); // Close the LoginActivity
+                finish();
             } else {
-                Toast.makeText(login.this, "Invalid login or password", Toast.LENGTH_SHORT).show();
-                // The user can try again
+                Toast.makeText(connexion.this, R.string.invalid, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private boolean checkUser(String login, String password) {
-        try (SQLiteDatabase db = DataBase.getReadableDatabase(); Cursor cursor = db.query(DataSet.TABLE_USER_DATA, // Table
-                null, // All columns
-                DataSet.COLUMN_LOGIN + " = ? AND " + DataSet.COLUMN_PASSWORD + " = ?", // Where clause
-                new String[]{login, password}, // Where args
-                null, // Group by
-                null, // Having
+        try (SQLiteDatabase db = DataBase.getReadableDatabase(); Cursor cursor = db.query(DataSet.TABLE_USER_DATA,
+                null,
+                DataSet.COLUMN_LOGIN + " = ? AND " + DataSet.COLUMN_PASSWORD + " = ?",
+                new String[]{login, password},
+                null,
+                null,
                 null)) {
 
-            return cursor.moveToFirst(); // Returns true if a row is found (user exists)
+            return cursor.moveToFirst();
 
         }
     }

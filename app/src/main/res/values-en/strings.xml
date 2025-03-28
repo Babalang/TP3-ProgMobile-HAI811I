@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TP3</string>
+    <string name="Exercice_1">Exercise 1</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="nom">Name</string>
+    <string name="prenom">Firstname</string>
+    <string name="naissance">Date of birth</string>
+    <string name="numtel">Phone number</string>
+    <string name="musique">Music</string>
+    <string name="lecture">Reading</string>
+    <string name="valider">Validate</string>
+    <string name="inscription">Register</string>
+    <string name="connexion">Log in</string>
+    <string name="login_no">Incorrect identifier</string>
+    <string name="login_deja">Username already in use</string>
+    <string name="mdp_inco">Wrong password</string>
+    <string name="data_save">Data saved successfully</string>
+    <string name="data_no_save">Failed to save data</string>
+    <string name="oui">Yes</string>
+    <string name="non">No</string>
+    <string name="invalid">Invalid login or password</string>
+    <string name="completer">Please fill in all slots</string>
+    <string name="Echec">Failed to save slot</string>
+    <string name="succes">Save successfully</string>
+</resources>
