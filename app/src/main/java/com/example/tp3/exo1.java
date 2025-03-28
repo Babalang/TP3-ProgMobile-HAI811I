@@ -25,7 +25,6 @@ public class exo1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         DataBase = new DataSet(getContext(), "inscription.db", null);
-        // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.exo1, container, false);
         Button button = view.findViewById(R.id.mainbutton);
         button.setOnClickListener(v -> loadResultFragment());
@@ -62,7 +61,6 @@ public class exo1 extends Fragment {
             Toast.makeText(getContext(), "Mot de passe invalide", Toast.LENGTH_SHORT).show();
             return;
         }
-        // Prepare the data to insert
         ContentValues values = new ContentValues();
         values.put(DataSet.COLUMN_LOGIN, login.getText().toString());
         values.put(DataSet.COLUMN_PASSWORD, mdp.getText().toString());
@@ -72,10 +70,9 @@ public class exo1 extends Fragment {
         values.put(DataSet.COLUMN_PHONE_NUMBER, numTel.getText().toString());
         values.put(DataSet.COLUMN_EMAIL, email.getText().toString());
         values.put(DataSet.COLUMN_INTERESTS, interests);
-        // Insert the data
         SQLiteDatabase db = DataBase.getWritableDatabase();
         long newRowId = db.insert(DataSet.TABLE_USER_DATA, null, values);
-        db.close(); // Close the database when done
+        db.close();
         if (newRowId != -1) {
             Toast.makeText(getContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
         } else {
@@ -101,10 +98,8 @@ public class exo1 extends Fragment {
         transaction.replace(R.id.frame, exo1_2Fragment);
         transaction.addToBackStack(null);
         transaction.commit();
-
     }
 
-    // Validation methods
     private boolean isValidLogin(String login) {
         return login.matches("[a-zA-Z].{0,9}");
     }
@@ -121,7 +116,6 @@ public class exo1 extends Fragment {
                 null, // Group by
                 null, // Having
                 null); // Order by
-
         boolean exists = cursor.moveToFirst();
         cursor.close();
         db.close();

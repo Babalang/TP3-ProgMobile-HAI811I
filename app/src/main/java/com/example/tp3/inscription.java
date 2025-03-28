@@ -1,10 +1,7 @@
 package com.example.tp3;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.widget.Button;
 
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 

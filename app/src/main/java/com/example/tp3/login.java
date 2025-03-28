@@ -1,6 +1,5 @@
 package com.example.tp3;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,8 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class login extends Activity {
+
+public class login extends AppCompatActivity {
     private DataSet DataBase;
 
     @Override
@@ -40,27 +41,16 @@ public class login extends Activity {
     }
 
     private boolean checkUser(String login, String password) {
-        SQLiteDatabase db = null;
-        Cursor cursor = null;
-        try {
-            db = DataBase.getReadableDatabase();
-            cursor = db.query(DataSet.TABLE_USER_DATA, // Table
-                    null, // All columns
-                    DataSet.COLUMN_LOGIN + " = ? AND " + DataSet.COLUMN_PASSWORD + " = ?", // Where clause
-                    new String[]{login, password}, // Where args
-                    null, // Group by
-                    null, // Having
-                    null); // Order by
+        try (SQLiteDatabase db = DataBase.getReadableDatabase(); Cursor cursor = db.query(DataSet.TABLE_USER_DATA, // Table
+                null, // All columns
+                DataSet.COLUMN_LOGIN + " = ? AND " + DataSet.COLUMN_PASSWORD + " = ?", // Where clause
+                new String[]{login, password}, // Where args
+                null, // Group by
+                null, // Having
+                null)) {
 
             return cursor.moveToFirst(); // Returns true if a row is found (user exists)
 
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
-            if (db != null) {
-                db.close();
-            }
         }
     }
 }

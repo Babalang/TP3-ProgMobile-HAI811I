@@ -41,44 +41,39 @@ public class planning extends AppCompatActivity {
             Toast.makeText(this, "Please fill in all slots", Toast.LENGTH_SHORT).show();
             return false;
         }
-        SQLiteDatabase db = null; // Initialize db here
-        long newRowId = -1; // Initialize newRowId here
+        // Initialize db here
 
-        try {
-            db = dataSet.getWritableDatabase();
+        long newRowId; // Initialize newRowId here
+        try (SQLiteDatabase db = dataSet.getWritableDatabase()) {
             // Prepare the data to insert
             ContentValues values = new ContentValues();
             values.put(DataSet.COLUMN_TIME_SLOT, "08h-10h");
             values.put(DataSet.COLUMN_ACTIVITY, slot1Str);
             newRowId = db.insert(DataSet.TABLE_PLANNING, null, values);
-            if(newRowId==-1){
+            if (newRowId == -1) {
                 Toast.makeText(this, "Failed to save slot 08h-10h", Toast.LENGTH_SHORT).show();
                 return false;
             }
             values.put(DataSet.COLUMN_TIME_SLOT, "10h-12h");
             values.put(DataSet.COLUMN_ACTIVITY, slot2Str);
             newRowId = db.insert(DataSet.TABLE_PLANNING, null, values);
-            if(newRowId==-1){
+            if (newRowId == -1) {
                 Toast.makeText(this, "Failed to save slot 10h-12h", Toast.LENGTH_SHORT).show();
                 return false;
             }
             values.put(DataSet.COLUMN_TIME_SLOT, "14h-16h");
             values.put(DataSet.COLUMN_ACTIVITY, slot3Str);
             newRowId = db.insert(DataSet.TABLE_PLANNING, null, values);
-            if(newRowId==-1){
+            if (newRowId == -1) {
                 Toast.makeText(this, "Failed to save slot 14h-16h", Toast.LENGTH_SHORT).show();
                 return false;
             }
             values.put(DataSet.COLUMN_TIME_SLOT, "16h-18h");
             values.put(DataSet.COLUMN_ACTIVITY, slot4Str);
             newRowId = db.insert(DataSet.TABLE_PLANNING, null, values);
-            if(newRowId==-1){
+            if (newRowId == -1) {
                 Toast.makeText(this, "Failed to save slot 16h-18h", Toast.LENGTH_SHORT).show();
                 return false;
-            }
-        } finally {
-            if (db != null) {
-                db.close();
             }
         }
         Toast.makeText(this, "Planning saved successfully", Toast.LENGTH_SHORT).show();
